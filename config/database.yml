@@ -82,4 +82,4 @@ production:
   <<: *default
   database: voodoo_production
   username: voodoo
-  password: Rails.application.credentials.dbpass
+  password: <%= Rails.application.credentials.dbpass %>
