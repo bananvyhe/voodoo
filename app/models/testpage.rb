@@ -1,0 +1,2 @@
+class Testpage < ApplicationRecord
+end
