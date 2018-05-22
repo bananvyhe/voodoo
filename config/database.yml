@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: voodoo_production
   username: voodoo
   password: <%= ENV['VOODOO_DATABASE_PASSWORD'] %>
