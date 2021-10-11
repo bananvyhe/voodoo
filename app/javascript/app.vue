@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 #app{
-    background-color: #1a2b08;
+    background-color: #171f1a;
   }
 p {
   font-size: 1em;
