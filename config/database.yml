@@ -87,4 +87,4 @@ production:
   <<: *default
   database: voodoo_production
   username: voodoo
-  password: Rails.application.secret_mail
+  password: Rails.application.secret_key_base
