@@ -8,5 +8,4 @@ const scss = require('./loaders/scss')
 
 environment.plugins.prepend('VueLoaderPlugin', new VueLoaderPlugin())
 environment.loaders.prepend('vue', vue)
-environment.loaders.prepend('scss', scss)
 module.exports = environment
