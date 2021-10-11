@@ -79,12 +79,8 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-
-#Правильный способ доступа и проверки secret_key_base в Rails 6 больше не является:~
-#Rails.application.credentials.secret_key_base
-#теперь это:
 production:
   <<: *default
   database: voodoo_production
   username: voodoo
-  password: Rails.application.secret_mail
+  password: Rails.application.credentials.secret_mail
