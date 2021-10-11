@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: voodoo_production
-  username: voodoo
+  username: deploy
   password: Rails.application.credentials.secret_mail
