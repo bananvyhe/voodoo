@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: voodoo_development
-
+  password: Rails.application.credentials.secret_mail
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -84,8 +84,4 @@ production:
   database: voodoo_production
   username: deploy
   password: Rails.application.credentials.secret_mail
-development:
-  <<: *default
-  database: voodoo_development
-  username: deploy
-  password: Rails.application.credentials.secret_mail
+ 

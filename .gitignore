@@ -34,3 +34,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+test/fixtures/news.yml
+test/models/news_test.rb
