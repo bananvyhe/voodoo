@@ -1,7 +1,7 @@
 class TriadcounterWorker
   include Sidekiq::Worker
 
-  def perform(*args)
-    # Do something
-  end
+	def perform
+	 
+	end
 end
