@@ -84,3 +84,8 @@ production:
   database: voodoo_production
   username: deploy
   password: Rails.application.credentials.secret_mail
+development:
+  <<: *default
+  database: voodoo_development
+  username: deploy
+  password: Rails.application.credentials.secret_mail
