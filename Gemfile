@@ -22,6 +22,7 @@ gem 'redis', '~> 4.0'
 gem 'uglifier'
 gem 'sidekiq'
 gem 'whenever', require: false
+gem 'mechanize'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
