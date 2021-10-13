@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 gem 'uglifier'
 gem 'sidekiq'
+gem 'sidekiq-client-cli'
 gem 'whenever', require: false
 gem 'mechanize'
 gem 'httparty'
