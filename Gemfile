@@ -23,6 +23,7 @@ gem 'uglifier'
 gem 'sidekiq'
 gem 'whenever', require: false
 gem 'mechanize'
+gem 'httparty'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
