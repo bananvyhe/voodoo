@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 gem 'uglifier'
 gem 'sidekiq'
+gem 'whenever', require: false
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
