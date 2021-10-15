@@ -38,3 +38,4 @@ yarn-debug.log*
 test/fixtures/news.yml
 test/models/news_test.rb
 koreatimespage.txt
+koreatimespage.html
