@@ -8,14 +8,14 @@ class TriadcounterWorker < ApplicationController
 	def perform
 		def selection_scrapped(row, url)
 			# print row
-			title  = row.css('.list_article_photo img').attr('src')
-			# head = row.css('.list_article_headline').at('a').inner_text
+			title  = row.css('.list_article_photo img').attr('src') 
+			news_link = row.css('.list_article_headline a').attr('href')
 			# head_link = row.css('.list_article_headline a').attr('href')
 			# lead = row.css('.list_article_lead').at('a').inner_text
 			# trans = EasyTranslate.translate(lead, to: :ru)
 			# date = row.css('.list_article_byline2').inner_text
 			puts title
-			# puts head
+			puts news_link
 			# puts head_link
 			# puts lead
 			# puts date
