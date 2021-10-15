@@ -100,9 +100,6 @@ GEM
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    easy_translate (0.5.1)
-      thread
-      thread_safe
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.4)
@@ -233,8 +230,6 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     thor (1.1.0)
-    thread (0.2.2)
-    thread_safe (0.3.6)
     tilt (2.0.10)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
@@ -283,7 +278,6 @@ DEPENDENCIES
   capistrano-rails (~> 1.6)
   capistrano-rbenv (~> 2.2)
   capybara (>= 3.26)
-  easy_translate
   httparty
   jbuilder (~> 2.7)
   listen (~> 3.3)

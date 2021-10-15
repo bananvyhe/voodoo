@@ -25,7 +25,6 @@ gem 'sidekiq-client-cli'
 gem 'whenever', require: false
 gem 'mechanize'
 gem 'httparty'
-gem 'easy_translate'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
