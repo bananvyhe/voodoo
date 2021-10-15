@@ -4,25 +4,21 @@ class TriadcounterWorker < ApplicationController
 	require 'mechanize'
 	require 'json'
 	require 'httparty'  
+
  
 	def perform
 		def selection_scrapped(row, url)
-			# print row
 			title  = row.css('.list_article_photo img').attr('src').to_s
 			titlecrop = title.slice(0, title.rindex('/dims'))
 			news_link = row.css('.list_article_headline a').attr('href')
 			head = row.css('.list_article_headline a').inner_text.to_s
-			# trans = EasyTranslate.new
-			# trans = EasyTranslate.translate(head, to: :ru)
-			# lead = row.css('.list_article_lead').at('a').inner_text
-			# trans = EasyTranslate.translate(lead, to: :ru)
-			# date = row.css('.list_article_byline2').inner_text
+			date = row.css('.list_article_byline2').inner_text
+			article = row.css('.list_article_lead a').inner_text
 			puts titlecrop
 			puts news_link
 			puts head 
-			# puts lead
-			# puts date
-			# puts trans
+			puts article
+			puts date
 		end
 
 		agent = Mechanize.new
