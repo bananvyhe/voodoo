@@ -3,7 +3,8 @@
     <v-app>
       <v-container>
         <v-main>
-          <p>{{ message }}</p>          
+          <p>{{ message }}</p>   
+          <news></news>       
         </v-main>
       </v-container>
     </v-app>
@@ -11,7 +12,11 @@
 </template>
 
 <script>
+import News from './news.vue'
 export default {
+  components: {
+    'news': News
+  },
   data: function () {
     return {
       message: "Voodoo invition"
