@@ -6,10 +6,67 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue'
-import Vuetify from 'vuetify'
+// import Vuetify from 'vuetify'
 import App from '../app.vue'
 import 'vuetify/dist/vuetify.min.css'
+// import Vuetify from 'vuetify/lib'
 import axios from 'axios'
+
+Vue.use(Vuetify, {
+	components: {
+		// VRadio,
+		// VRadioGroup,
+		// VTextField,
+		// VCol,
+		// VRow,
+		VContainer,
+		// VForm,
+		// VIcon,
+		// VSpacer,
+		// VToolbarTitle,
+		// VAppBarNavIcon,
+		// VAppBar,
+		VMain,
+		VApp,
+		// VAlert,
+		// VCard,
+		// VCardActions,
+		VBtn,
+		// VListItem,
+		// VListItemContent,
+		// VListItemTitle,
+		// VListItemSubtitle,
+		// VListItemAvatar,
+	}
+}) 
+import Vuetify, {
+	// VRadio,
+	// VRadioGroup,
+	// VTextField,
+	// VCol,
+	// VRow,
+	VContainer,
+	// VForm,
+	// VIcon,
+	// VSpacer,
+	// VToolbarTitle,
+	// VAppBarNavIcon,
+	// VAppBar,
+	VMain,
+	VApp,
+	// VAlert,
+	// VCard,
+	// VCardActions,
+	VBtn,
+	// VListItem,
+	// VListItemContent,
+	// VListItemTitle,
+	// VListItemSubtitle,
+	// VListItemAvatar,
+} from 'vuetify/lib'
+
+
+
 Vue.use(Vuetify)
 
 document.addEventListener('DOMContentLoaded', () => {
