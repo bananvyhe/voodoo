@@ -3,7 +3,7 @@
     <v-app>
       <v-container>
         <v-main>
-          <p>{{ message }}</p>   
+        <!--   <p>{{ message }}</p>    -->
           <news></news>       
         </v-main>
       </v-container>
@@ -27,11 +27,7 @@ export default {
 
 <style scoped>
 #app{
-    background-color: #171f1a;
+    
   }
-p {
-  font-size: 1em;
-  text-align: center;
-  color: #999;
-}
+ 
 </style>

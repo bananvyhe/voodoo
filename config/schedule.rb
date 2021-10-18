@@ -7,7 +7,7 @@ set :output, "#{path}/log/cron.log"
 # set :output, "/log/cron.log"
 set :environment, :developnent 
 
-every 5.minutes do
+every 3.hours do
   sidekiq 'push TriadcounterWorker'
 end
 
