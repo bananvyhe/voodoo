@@ -6,32 +6,39 @@ class TobdWorker < ApplicationController
   require 'httparty' 
   def perform (imglink, head, content, datepost, link, tokenrapid)
 
-    #headers for httparty
-    headersb = {
-      "Content-Type" => "application/json",
-      "Authorization" => tokenrapid 
-    }
+     @headersb = {
+        "Content-Type" => "application/json",
+        "Authorization" => tokenrapid 
+      }
 
-    #body for httparty
-    bodyb = {
-      "folderId"=>"b1g86cba4bfmnhhsnobp",
-      "texts"=> head,
-      "targetLanguageCode"=>"ru"
-    }
+    def tranklukator(zap) 
+      puts "tranklufication..."
+      bodyb = {
+        "folderId"=>"b1g86cba4bfmnhhsnobp",
+        "texts"=> zap,
+        "targetLanguageCode"=>"ru"
+      }
+      resp = HTTParty.post("https://translate.api.cloud.yandex.net/translate/v2/translate", headers: @headersb, body: bodyb.to_json)
+      render = JSON.parse resp.to_s 
+      out = render["translations"]
+      tex = out[0]
+      headfin = tex.slice("text")['text']
+      # if (pos == 1)
+      #   puts "загоовок"  
+      #   puts headfin
+      # elsif (pos == 2)
+      #   puts "контент"  
+      #   puts headfin
+      # end
+    end
+
     #separate translated phrase from responce
-    resp = HTTParty.post("https://translate.api.cloud.yandex.net/translate/v2/translate", headers: headersb, body: bodyb.to_json)
-    render = JSON.parse resp.to_s 
-    out = render["translations"]
-    tex = out[0]
-    headfin = tex.slice("text")['text']
-    
-    #make  for full news link
-    linkfin = "https://www.koreatimes.co.kr" + link.to_s
+    headfin = tranklukator head
+    contentfin = tranklukator content
+    sleep(1)
 
-    puts headfin
-    puts linkfin 
-  	# @news = News.new({:imglink => imglink, :head => head,:content => content,:datepost => datepost,:link => link})
-  	# @news.save
+  	@news = News.new({:imglink => imglink, :head => headfin,:content => contentfin,:datepost => datepost,:link => link})
+  	@news.save
  
 	end
 end
