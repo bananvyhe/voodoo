@@ -5,15 +5,17 @@ class NewsController < ApplicationController
 		render json: @news
 	end
 	def create 
-		# puts params.require(:_json)
+		tokenrapid = "bearer " + %x{yc iam create-token}
+
+		puts $tokenrapid
 		params.require(:_json).each do |d|
-      imglink = d[:imglink]
+    	imglink = d[:imglink]
       head = d[:head]
       content = d[:content]
       datepost = d[:datepost]
       link = d[:link]
-      unless News.find_by(link: link)  
-      	TobdWorker.perform_async(imglink, head, content, datepost, link)
+    	unless News.find_by(link: link)  
+      	TobdWorker.perform_async(imglink, head, content, datepost, link, tokenrapid )
       	puts 'send'
       	sleep(1)
 			end
