@@ -8,7 +8,7 @@ module.exports = {
       // SCSS has different line endings than SASS
       // and needs a semicolon after the import.
        
-        test: /\.sass$/,
+        test: /\.scss$/,
         use: [
           'vue-style-loader',
             'css-loader',
