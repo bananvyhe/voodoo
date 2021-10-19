@@ -58,7 +58,7 @@ namespace :deploy do
 end
 after 'deploy:starting', 'deploy:clear_crontab'
 after 'deploy:starting', 'deploy:update_crontab'
-after 'deploy:starting', 'sidekiq:quiet'
+# after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
 # Uncomment the following to require manually verifying the host key before first deploy.

@@ -18,10 +18,10 @@ module.exports = {
      
             // Requires sass-loader@^8.0.0
             options: {
-              // implementation: require('sass'),
+              implementation: require('sass'),
 
               // This is the path to your variables
-               // prependData: "@import '@/app/javascript/stylesheets/scss/_variables.scss';"
+                additionalData: "@import '@/app/javascript/stylesheets/scss/_variables.scss';"
             },
        
           },
