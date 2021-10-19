@@ -15,5 +15,5 @@ options.additionalData = `@import "app/javascript/stylesheets/scss/_variables.sc
 
 environment.plugins.prepend('VueLoaderPlugin', new VueLoaderPlugin())
 environment.loaders.prepend('vue', vue)
- 
+environment.loaders.prepend('vuetify', vuetify)
 module.exports = environment
