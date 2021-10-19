@@ -14,10 +14,13 @@
             outlined
             tile>
             </v-col>  
-            {{item.head}}
-
-            {{item.content}}        
-            {{item.datepost}}
+            <v-col>
+              {{item.head}}
+              {{item.content}}  
+              <div  >
+                {{item.datepost}}                
+              </div>      
+            </v-col>
             <!-- {{item.link}} -->
         </v-col>
       </v-row>
