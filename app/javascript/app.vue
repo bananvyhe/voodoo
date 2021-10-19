@@ -3,7 +3,7 @@
     <v-app>
       <v-container>
           <v-app-bar app dense hide-on-scroll>
-            Новости из Кореи
+            Новости mmorpg
           </v-app-bar>
         <v-main>
 

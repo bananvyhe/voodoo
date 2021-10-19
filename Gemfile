@@ -25,6 +25,10 @@ gem 'sidekiq-client-cli'
 gem 'whenever', require: false
 gem 'mechanize'
 gem 'httparty'
+gem 'nokogiri'
+gem 'mechanize'
+gem 'whenever'
+gem 'redis-namespace'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,6 +49,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.2'
   gem 'capistrano-passenger'
   gem 'capistrano-bundler', '~> 2.0'
+  gem 'capistrano-sidekiq', group: :development
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.

@@ -7,6 +7,12 @@ set :repo_url, "git://github.com/bananvyhe/voodoo.git"
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :branch, "main"
+
+set :pty,  false
+set :rbenv_map_bins, %w{rake gem bundle ruby rails sidekiq sidekiqctl}
+
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/apps/farmspot"
 set :rbenv_ruby, '3.0.2'
@@ -36,7 +42,26 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # Default value for keep_releases is 5
 set :keep_releases, 3
 
+namespace :deploy do
+	desc "Update cron jobs"
+  task :update_crontab do
+  	on roles(:deploy) do
+  		run "cd #{release_path} && whenever --update-crontab voodoo"
+  	end
+  end
+    desc "Clear cron jobs"
+  task :clear_crontab do
+  	on roles(:deploy) do
+    	run "cd #{release_path} && whenever --clear-crontab voodoo"
+  	end
+  end
+end
+after 'deploy:starting', 'deploy:clear_crontab'
+after 'deploy:starting', 'deploy:update_crontab'
+after 'deploy:starting', 'sidekiq:quiet'
+after 'deploy:reverted', 'sidekiq:restart'
+after 'deploy:published', 'sidekiq:restart'
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-
+set :MALLOC_ARENA_MAX, 2
 #after :some_other_task, :'passenger:restart'
