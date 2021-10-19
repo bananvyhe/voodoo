@@ -1,6 +1,7 @@
 <template>
   <div> 
     <div v-for="(item, index) in alld" >
+      <v-card >
       <v-row class="row">
         <v-col
           class="d-flex flex-row mb-6 "
@@ -15,7 +16,11 @@
             tile>
             </v-col>  
             <v-col>
-              {{item.head}}
+              <v-card-title
+              class="text-h5"
+              v-text="item.head">
+              </v-card-title>
+ 
               {{item.content}}  
               <div  >
                 {{item.datepost}}                
@@ -24,6 +29,7 @@
             <!-- {{item.link}} -->
         </v-col>
       </v-row>
+      </v-card>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div id="app">
     <v-app>
       <v-container>
-          <v-app-bar app dense>
+          <v-app-bar app dense hide-on-scroll>
             Новости из Кореи
           </v-app-bar>
         <v-main>
