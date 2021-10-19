@@ -2,7 +2,11 @@
   <div id="app">
     <v-app>
       <v-container>
+          <v-app-bar app>
+            Новости из Кореи
+          </v-app-bar>
         <v-main>
+
         <!--   <p>{{ message }}</p>    -->
           <news></news>       
         </v-main>
