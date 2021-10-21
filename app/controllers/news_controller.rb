@@ -2,7 +2,7 @@ class NewsController < ApplicationController
 	skip_before_action :verify_authenticity_token
 	def index
 		@news = News.all 
-		render json: @news
+		render json: @news.order(created_at: :desc)
 	end
 	def create 
 		tokenrapid = "bearer " + %x{yc iam create-token}
